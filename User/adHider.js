@@ -245,7 +245,13 @@ var links = postContent.getElementsByTagName("a");
 if (((links.length==0)||((links.length==1)&&(spans.length==1)))&&(!posts[i].classList.contains("post_copy")))
 {}
 else{
-	var adsclass = posts[i].getElementsByClassName("wall_marked_as_ads");
+	var adsclass=[];
+	//var adsclass = posts[i].getElementsByClassName("wall_marked_as_ads")
+	adsclass.push(posts[i].getElementsByClassName("wall_marked_as_ads"));
+	adsclass.push(posts[i].getElementsByClassName("_ads_promoted_post_data_w"));
+			adsclass.push(posts[i].getElementsByClassName("wall_text_name_explain_promoted_post"));
+		
+	
 if (adsclass.length>0) {
 	k=2;
 }
