@@ -38,12 +38,14 @@ function hideAdvert() {
 					adsclass.push(posts[i].getElementsByClassName("wall_marked_as_ads"));
 					adsclass.push(posts[i].getElementsByClassName("_ads_promoted_post_data_w"));
 					adsclass.push(posts[i].getElementsByClassName("wall_text_name_explain_promoted_post"));
-
-
-					if (adsclass.length > 0) {
-						k = 2;
+					var check = true;
+					for (var jj = 0, len = adsclass.length; jj < len; jj++) {
+						if (adsclass[jj].length > 0) {
+							k = 2; check = false;
+						}
 					}
-					else {
+
+					if (check) {
 						var k = 0;
 						SearchBadIns();
 					}
